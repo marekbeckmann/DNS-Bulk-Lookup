@@ -17,7 +17,7 @@ forwarddns -domain domain
 ```
 forwarddns -file C:\hosts.txt 
 ```
-** If your filepath includes spaces, special chars etc. put the filepath in double quotes **
+**If your filepath includes spaces, special chars etc. put the filepath in double quotes**
 
 ### 2. To Lookup the Domain of one IP
 
@@ -29,6 +29,6 @@ reversedns -ip 1.1.1.1
  ```
  reversedns -file C:\ips.txt
  ```
- ** If your filepath includes spaces, special chars etc. put the filepath in double quotes **
+ **If your filepath includes spaces, special chars etc. put the filepath in double quotes**
 
 
