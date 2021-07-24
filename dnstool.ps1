@@ -6,14 +6,14 @@ function reversedns ($ip, $file) {
         if ($file) {
             [string[]]$fromFile = Get-Content -Path $file
             foreach ($i in $fromFile) {
-                $results += @((Resolve-DnsName -Name $i).NameHost)    
+                $results += @(Resolve-DnsName -Name $i)    
             }
         }
         else {
             $results = (Resolve-DnsName -Name $ip).NameHost
         }
         foreach ($i in $results) {
-            $output += $i + "`n"
+            $output += $i.Name + " <=> " + $i.NameHost + "`n"
         }
         return $output
     }
@@ -27,17 +27,15 @@ function forwarddns ($domain, $file) {
         if ($file) {
             [string[]]$fromFile = Get-Content -Path $file
             foreach ($i in $fromFile) {
-                $results += @((Resolve-DnsName -Name $i -Type A).IPAddress)    
+                $results += @(Resolve-DnsName -Name $i -Type A)    
             }
         }
         else {
             $results = (Resolve-DnsName -Name $domain -Type A).IPAddress
         }
         foreach ($i in $results) {
-            $output += $i + "`n"
+            $output += $i.Name + " <=> " + $i.IPAddress + "`n"
         }
         return $output
     }
 }
-
-
