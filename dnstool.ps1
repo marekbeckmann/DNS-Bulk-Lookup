@@ -10,7 +10,7 @@ function reversedns ($ip, $file) {
             }
         }
         else {
-            $results = (Resolve-DnsName -Name $ip).NameHost
+            $results = (Resolve-DnsName -Name $ip)
         }
         foreach ($i in $results) {
             $output += $i.Name + " <=> " + $i.NameHost + "`n"
@@ -31,7 +31,7 @@ function forwarddns ($domain, $file) {
             }
         }
         else {
-            $results = (Resolve-DnsName -Name $domain -Type A).IPAddress
+            $results = (Resolve-DnsName -Name $domain -Type A)
         }
         foreach ($i in $results) {
             $output += $i.Name + " <=> " + $i.IPAddress + "`n"
