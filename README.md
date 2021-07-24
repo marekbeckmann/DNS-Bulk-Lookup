@@ -31,4 +31,16 @@ reversedns -ip 1.1.1.1
  ```
  **If your filepath includes spaces, special chars etc. put the filepath in double quotes**
 
+### 3. Example
 
+Bulk Lookup `amazon.com`, `google.com`
+```
+forwarddns -file .\example.txt
+```
+Output: 
+```
+amazon.com <=> 176.32.103.205
+amazon.com <=> 54.239.28.85
+amazon.com <=> 205.251.242.103
+google.com <=> 142.250.74.78
+```
